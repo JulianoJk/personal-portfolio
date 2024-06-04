@@ -1,9 +1,5 @@
-interface ISvgImages {
-  width?: number | string;
-  height?: number | string;
-  className?: string;
-  radius?: number | string;
-}
+import { ISvgImages } from "../Model/Model";
+
 const LogoImage = (props: ISvgImages) => (
   <svg
     version="1.1"

@@ -4,7 +4,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: #F2F1F2;
+  color: #f2f1f2;
   background-color: #242424;
 
   font-synthesis: none;
@@ -22,13 +22,9 @@ a:hover {
   color: #535bf2;
 }
 
-/* body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-} */
+body {
+  background: linear-gradient(to bottom, #1F2937, #2C3E50);
+}
 
 h1 {
   font-size: 3.2em;

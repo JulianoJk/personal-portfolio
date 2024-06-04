@@ -22,7 +22,7 @@ const drawerWidth = 240;
 const navItems = [
   { name: "Home", path: "/personal-portfolio/" },
   { name: "About", path: "/about" },
-  { name: "Contact", path: "/contact" },
+  { name: "Projects", path: "/projects" },
 ];
 
 const DrawerAppBar: React.FC<Props> = (props: Props) => {
