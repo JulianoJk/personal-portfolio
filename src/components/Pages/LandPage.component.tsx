@@ -1,24 +1,11 @@
 import React from "react";
 import { Paper, Typography } from "@mui/material";
+import { useStyles } from "./Home.styles";
 
 const LandPage: React.FC = () => {
+  const { classes } = useStyles();
   return (
-    <Paper
-      elevation={0}
-      sx={{
-        backgroundColor: "#1F2937",
-        height: "100vh",
-        width: "100vw",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: "1em",
-        boxSizing: "border-box",
-        backgroundImage: "url('hero-bg.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <Paper elevation={0} className={classes.landPageRoot}>
       <Typography
         variant="h1"
         gutterBottom
