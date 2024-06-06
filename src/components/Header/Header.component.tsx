@@ -1,3 +1,5 @@
+// src/components/Header/DrawerAppBar.component.tsx
+
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -12,7 +14,8 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { IconMenu2 } from "@tabler/icons-react";
-import { useNavigate } from "react-router-dom";
+
+import TestIDs from "../TestID";
 
 interface Props {
   window?: () => Window;
@@ -20,15 +23,21 @@ interface Props {
 
 const drawerWidth = 240;
 const navItems = [
-  { name: "Home", path: "/personal-portfolio/" },
-  { name: "About", path: "/about" },
-  { name: "Projects", path: "/projects" },
+  { name: "Home", path: TestIDs.home },
+  { name: "About", path: TestIDs.about },
+  { name: "Projects", path: TestIDs.projects },
 ];
+
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+};
 
 const DrawerAppBar: React.FC<Props> = (props: Props) => {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const navigate = useNavigate();
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -48,7 +57,7 @@ const DrawerAppBar: React.FC<Props> = (props: Props) => {
           <ListItem key={item.name} disablePadding>
             <ListItemButton
               sx={{ textAlign: "center" }}
-              onClick={() => navigate(item.path)}
+              onClick={() => scrollToSection(item.path)}
             >
               <ListItemText primary={item.name} />
             </ListItemButton>
@@ -86,7 +95,7 @@ const DrawerAppBar: React.FC<Props> = (props: Props) => {
               <Button
                 key={item.name}
                 sx={{ color: "#fff" }}
-                onClick={() => navigate(item.path)}
+                onClick={() => scrollToSection(item.path)}
               >
                 {item.name}
               </Button>
