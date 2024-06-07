@@ -4,8 +4,8 @@ import React from "react";
 import { Box } from "@mui/material";
 import AboutMe from "./AboutMe.component";
 import ProjectsSection from "./ProjectsSection.component";
-import LandPage from "./LandPage.component";
 import TestIDs from "../TestID";
+import LandPage from "./LandPage.component";
 
 const Home: React.FC = () => {
   return (
