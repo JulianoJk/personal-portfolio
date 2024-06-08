@@ -6,6 +6,7 @@ import Trail from "./Trail.component";
 const LandPage: React.FC = () => {
   const { classes } = useStyles();
   const [showTrail, setShowTrail] = useState(true);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setShowTrail((prevOpen) => !prevOpen);
@@ -14,18 +15,27 @@ const LandPage: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const trailData = [
+    {
+      open: showTrail,
+      texts: ["Hello!", "I'm Juliano Jika"],
+    },
+    {
+      open: !showTrail,
+      texts: ["Full Stack Developer", "Building Joyful", "Digital Experiences"],
+    },
+  ];
+
   return (
     <Paper elevation={0} className={classes.landPageRoot}>
       <div>
-        <Trail open={showTrail}>
-          <span>Hello!</span>
-          <span>I'm Juliano Jika</span>
-        </Trail>
-        <Trail open={!showTrail}>
-          <span>Full Stack Developer</span>
-          <span>Building Joyful</span>
-          <span>Digital Experiences</span>
-        </Trail>
+        {trailData.map((trail, index) => (
+          <Trail key={index} open={trail.open}>
+            {trail.texts.map((text, idx) => (
+              <span key={idx}>{text}</span>
+            ))}
+          </Trail>
+        ))}
       </div>
     </Paper>
   );
