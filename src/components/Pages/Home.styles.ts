@@ -26,26 +26,4 @@ export const useStyles = makeStyles()(() => ({
     backgroundPosition: "center",
     overflowX: "hidden",
   },
-  trailsText: {
-    position: "relative",
-    width: "100%",
-    height: "80px",
-    lineHeight: "80px",
-    color: "black",
-    fontSize: "6em",
-    fontWeight: 800,
-    letterSpacing: "-0.05em",
-    willChange: "transform, opacity",
-    overflow: "hidden",
-    "& > div": {
-      paddingRight: "0.05em",
-      overflow: "hidden",
-    },
-  },
-  container: {
-    display: "flex",
-    alignItems: "center",
-    height: "100vh", // Ensure this is full height
-    justifyContent: "center",
-  },
 }));
