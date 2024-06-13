@@ -10,7 +10,7 @@ const LandPage: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setShowTrail((prevOpen) => !prevOpen);
-    }, 3500);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);

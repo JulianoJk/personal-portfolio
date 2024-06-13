@@ -26,6 +26,7 @@ const navItems = [
   { name: "Home", path: TestIDs.home },
   { name: "About", path: TestIDs.about },
   { name: "Projects", path: TestIDs.projects },
+  { name: "Skills", path: TestIDs.skills },
 ];
 
 const scrollToSection = (id: string) => {
