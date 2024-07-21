@@ -13,6 +13,10 @@ export const useStyles = makeStyles()(() => ({
     backgroundImage: "url('hero-bg.jpg')",
     backgroundSize: "cover",
     backgroundPosition: "center",
+    overflowY: "auto",
+    "@media (max-width: 600px)": {
+      padding: "0.5em",
+    },
   },
   aboutMeRoot: {
     height: "100vh",
@@ -25,5 +29,17 @@ export const useStyles = makeStyles()(() => ({
     backgroundSize: "cover",
     backgroundPosition: "center",
     overflowX: "hidden",
+    "@media (max-width: 600px)": {
+      padding: "1em",
+    },
+  },
+  trailText: {
+    fontSize: "1em",
+    color: "#ffffff",
+    display: "block",
+    "@media (max-width: 600px)": {
+      fontSize: "0.7em",
+      lineHeight: "1em",
+    },
   },
 }));

@@ -18,11 +18,11 @@ const LandPage: React.FC = () => {
   const trailData = [
     {
       open: showTrail,
-      texts: ["Hello!", "I'm Juliano Jika"],
+      texts: ["Welcome to", "my page.", "I'm Juliano Jika"],
     },
     {
       open: !showTrail,
-      texts: ["Full Stack Developer", "Building Joyful", "Digital Experiences"],
+      texts: ["Full Stack Developer", "Code Explorer", "Tech Enthusiast"],
     },
   ];
 
@@ -32,7 +32,9 @@ const LandPage: React.FC = () => {
         {trailData.map((trail, index) => (
           <Trail key={index} open={trail.open}>
             {trail.texts.map((text, idx) => (
-              <span key={idx}>{text}</span>
+              <span key={idx} className={classes.trailText}>
+                {text}
+              </span>
             ))}
           </Trail>
         ))}

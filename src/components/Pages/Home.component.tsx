@@ -6,7 +6,7 @@ import AboutMe from "./AboutMe.component";
 import ProjectsSection from "./ProjectsSection.component";
 import TestIDs from "../TestID";
 import LandPage from "./LandPage.component";
-import Skills from "./Skills.component";
+// import Skills from "./Skills.component";
 
 const Home: React.FC = () => {
   return (
@@ -20,9 +20,9 @@ const Home: React.FC = () => {
         <AboutMe />
       </Box>{" "}
       {/* About Me Section */}
-      <Box id={TestIDs.skills}>
+      {/* <Box id={TestIDs.skills}>
         <Skills />
-      </Box>
+      </Box> */}
       {/* Projects Section */}
       <Box id={TestIDs.projects}>
         <ProjectsSection />
