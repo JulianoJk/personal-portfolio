@@ -11,12 +11,15 @@ import PythonIcon from "../../images/illustrations/PythonIcon";
 import CSharpIcon from "../../images/illustrations/CSharpIcon";
 import GitIcon from "../../images/illustrations/GitIcon";
 import JavaIcon from "../../images/illustrations/JavaIcon";
+import DockerIcon from "../../images/illustrations/DockerIcon";
+import MUIIcon from "../../images/illustrations/MUIIcon";
+import MantineUIIcon from "../../images/illustrations/MantineUIIcon";
 
 const CustomMarquee: React.FC = () => {
   return (
     <Marquee
       gradient={false}
-      speed={30}
+      speed={50}
       style={{
         backgroundColor: "#1e2a38",
         color: "#ffffff",
@@ -39,7 +42,10 @@ const CustomMarquee: React.FC = () => {
       <PythonIcon width="6em" />
       <CSharpIcon width="6em" />
       <GitIcon width="10em" />
+      <DockerIcon width="10em" />
       <JavaIcon height="5em" />
+      <MUIIcon height="7em" />
+      <MantineUIIcon height="7em" />
     </Marquee>
   );
 };
