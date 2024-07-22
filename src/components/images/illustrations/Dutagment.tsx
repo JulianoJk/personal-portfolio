@@ -1,4 +1,4 @@
-import { ISvgImages } from "../Model/Model";
+import { ISvgImages } from "../../Model/Model";
 const Dutagment = (props: ISvgImages) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

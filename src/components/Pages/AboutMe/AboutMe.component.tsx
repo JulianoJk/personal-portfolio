@@ -9,9 +9,11 @@ import {
 } from "@mui/material";
 import { useStyles } from "./AboutMe.styles";
 import { IconCode, IconTools, IconSchool, IconUser } from "@tabler/icons-react";
+import CustomMarquee from "./MyMarquee.component";
 
 const AboutMe: React.FC = () => {
   const { classes } = useStyles();
+
   return (
     <Box className={classes.aboutMeRoot}>
       <Container>
@@ -113,6 +115,7 @@ const AboutMe: React.FC = () => {
             </Typography>
           </CardContent>
         </Card>
+        <CustomMarquee />
       </Container>
     </Box>
   );
