@@ -84,7 +84,7 @@ const ThemePalette: Palette = {
   },
 };
 const theme = createTheme({
-  palette: { ThemePalette },
+  palette: ThemePalette,
 });
 const App: React.FC = () => {
   return (

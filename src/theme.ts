@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 export const greenThemeLight = {
   type: "light",
   primary: "#3fc337",

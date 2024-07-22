@@ -1,31 +1,20 @@
 import { makeStyles } from "tss-react/mui";
 
 export const useStyles = makeStyles()(() => ({
-  landPageRoot: {
-    backgroundColor: "#1F2937",
+  aboutMeRoot: {
     height: "100vh",
     width: "100vw",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    padding: "1em",
+    padding: "2em",
     boxSizing: "border-box",
-    backgroundImage: "url('hero-bg.jpg')",
+    backgroundColor: "#111b2adb",
     backgroundSize: "cover",
     backgroundPosition: "center",
-    overflowY: "auto",
+    overflowX: "hidden",
     "@media (max-width: 600px)": {
-      padding: "0.5em",
-    },
-  },
-
-  trailText: {
-    fontSize: "1em",
-    color: "#ffffff",
-    display: "block",
-    "@media (max-width: 600px)": {
-      fontSize: "0.7em",
-      lineHeight: "1em",
+      padding: "1em",
     },
   },
 }));

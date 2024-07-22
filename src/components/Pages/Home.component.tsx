@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Box } from "@mui/material";
-import AboutMe from "./AboutMe.component";
+import AboutMe from "./AboutMe/AboutMe.component";
 import ProjectsSection from "./ProjectsSection.component";
 import TestIDs from "../TestID";
 import LandPage from "./LandPage.component";
