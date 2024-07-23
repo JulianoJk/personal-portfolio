@@ -23,7 +23,7 @@ const iconStyle = {
 
 const CustomMarquee: React.FC = () => {
   const matches = useMediaQuery((theme: Theme) => theme.breakpoints.down("sm"));
-  const iconWidth = matches ? "3em" : "7em";
+  const iconWidth = matches ? "3em" : "8em";
   const smallIconWidth = matches ? "3em" : "5em";
 
   const iconHeight = matches ? "3em" : "4em";
@@ -58,35 +58,35 @@ const CustomMarquee: React.FC = () => {
         <div style={iconStyle}>
           <GitIcon
             height={matches ? "2.1em" : "3.5em"}
-            width={matches ? "5em" : "7em"}
+            width={matches ? "5em" : "6em"}
           />
         </div>
         <div style={iconStyle}>
-          <TypeScriptIcon width={iconWidth} />
+          <TypeScriptIcon width={iconWidth} height={iconHeight} />
         </div>
         <div style={iconStyle}>
-          <MySQLIcon width="5em" />
+          <MySQLIcon width={smallIconWidth} height={iconHeight} />
         </div>
         <div style={iconStyle}>
-          <ReactIcon width={iconWidth} />
+          <ReactIcon width={iconWidth} height={iconHeight} />
         </div>
         <div style={iconStyle}>
-          <JavascriptIcon width={iconWidth} />
+          <JavascriptIcon height={iconHeight} />
         </div>
         <div style={iconStyle}>
-          <ExpressJsIcon width={iconWidth} />
+          <ExpressJsIcon height={iconHeight} />
         </div>
         <div style={iconStyle}>
           <MongoDBIcon width={"7em"} />
         </div>
         <div style={iconStyle}>
-          <NodeJSIcon width={iconWidth} />
+          <NodeJSIcon width={iconWidth} height={iconHeight} />
         </div>
         <div style={iconStyle}>
-          <PythonIcon width={iconWidth} height={iconHeight} />
+          <PythonIcon height={iconHeight} />
         </div>
         <div style={iconStyle}>
-          <CSharpIcon width={iconWidth} />
+          <CSharpIcon width={iconWidth} height={iconHeight} />
         </div>
 
         <div style={iconStyle}>
