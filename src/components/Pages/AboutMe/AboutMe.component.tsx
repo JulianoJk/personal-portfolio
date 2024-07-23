@@ -1,6 +1,7 @@
 import { Container, Box, Typography, Grid } from "@mui/material";
 import { IconCode, IconTools, IconSchool, IconUser } from "@tabler/icons-react";
 import { useStyles } from "./AboutMe.styles";
+import CustomMarquee from "./MyMarquee.component";
 
 const aboutData = [
   {
@@ -33,39 +34,48 @@ const AboutMe = () => {
   const { classes } = useStyles();
 
   return (
-    <Container maxWidth="md" className={classes.wrapper}>
-      <Typography className={classes.supTitle}>About Me</Typography>
+    <>
+      {/* About Me Content */}
+      <Container maxWidth="md" className={classes.wrapper}>
+        <Typography className={classes.supTitle}>About Me</Typography>
 
-      <Typography variant="h4" className={classes.title} component="h2">
-        Discover <span className={classes.highlight}>My Journey</span>
-      </Typography>
-
-      <Container maxWidth="sm" disableGutters>
-        <Typography variant="body1" className={classes.description}>
-          Technology has always been my playground. From a young age, I've been
-          fascinated by how things work and how they can be improved. Here's a
-          glimpse into my world.
+        <Typography variant="h4" className={classes.title} component="h2">
+          Discover <span className={classes.highlight}>My Journey</span>
         </Typography>
-      </Container>
 
-      <Grid container spacing={4} mt={4}>
-        {aboutData.map((item, index) => (
-          <Grid item xs={12} sm={6} key={index}>
-            <Box className={classes.item}>
-              <Box>{item.icon}</Box>
-              <Box ml={2}>
-                <Typography variant="h6" className={classes.itemTitle}>
-                  {item.title}
-                </Typography>
-                <Typography variant="body2" className={classes.itemDescription}>
-                  {item.description}
-                </Typography>
+        <Container maxWidth="sm" disableGutters>
+          <Typography variant="body1" className={classes.description}>
+            Technology has always been my playground. From a young age, I've
+            been fascinated by how things work and how they can be improved.
+            Here's a glimpse into my world.
+          </Typography>
+        </Container>
+
+        <Grid container spacing={4} mt={4}>
+          {aboutData.map((item, index) => (
+            <Grid item xs={12} sm={6} key={index}>
+              <Box className={classes.item}>
+                <Box>{item.icon}</Box>
+                <Box ml={2}>
+                  <Typography variant="h6" className={classes.itemTitle}>
+                    {item.title}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    className={classes.itemDescription}
+                  >
+                    {item.description}
+                  </Typography>
+                </Box>
               </Box>
-            </Box>
-          </Grid>
-        ))}
-      </Grid>
-    </Container>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+      {/* Marquee Component */}
+      <CustomMarquee />
+    </>
   );
 };
+
 export default AboutMe;

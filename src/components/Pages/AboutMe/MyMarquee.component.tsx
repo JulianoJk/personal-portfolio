@@ -14,39 +14,90 @@ import JavaIcon from "../../images/illustrations/JavaIcon";
 import DockerIcon from "../../images/illustrations/DockerIcon";
 import MUIIcon from "../../images/illustrations/MUIIcon";
 import MantineUIIcon from "../../images/illustrations/MantineUIIcon";
+import { Theme, Typography, useMediaQuery } from "@mui/material";
+
+const iconStyle = {
+  display: "inline-block",
+  margin: "0 10px", // Consistent spacing between icons
+};
 
 const CustomMarquee: React.FC = () => {
+  const matches = useMediaQuery((theme: Theme) => theme.breakpoints.down("sm"));
+  const iconWidth = matches ? "3em" : "7em";
+  console.log("🚀 ~ iconWidth:", iconWidth);
+  const iconHeight = matches ? "3em" : "7em";
   return (
-    <Marquee
-      gradient={false}
-      speed={70}
-      style={{
-        backgroundColor: "#1e2a38",
-        color: "#ffffff",
-        padding: "0.5em",
-        fontSize: "1rem",
-        fontWeight: 500,
-        textAlign: "center",
-        width: "100%",
-        boxSizing: "border-box",
-        marginTop: "1em",
-      }}
-    >
-      <TypeScriptIcon width="7em" />
-      <MySQLIcon width="10em" />
-      <ReactIcon width="7em" />
-      <JavascriptIcon width="7em" />
-      <ExpressJsIcon width="7em" />
-      <MongoDBIcon width="10em" />
-      <NodeJSIcon width="10em" />
-      <PythonIcon width="6em" />
-      <CSharpIcon width="6em" />
-      <GitIcon width="10em" />
-      <DockerIcon width="10em" />
-      <JavaIcon height="5em" />
-      <MUIIcon height="7em" />
-      <MantineUIIcon height="7em" />
-    </Marquee>
+    <>
+      <Typography
+        variant="h4"
+        component="h1"
+        align="center"
+        gutterBottom
+        sx={{
+          color: "#ffffff",
+          fontWeight: "bold",
+          marginBottom: "1em",
+        }}
+      >
+        Programming Skills
+      </Typography>
+      <Marquee
+        gradient={false}
+        speed={50}
+        style={{
+          color: "#ffffff",
+          fontSize: "1.2rem", // Adjusted font size for better visibility
+          fontWeight: 500,
+          textAlign: "center",
+          width: "100%",
+          boxSizing: "border-box",
+          marginTop: "1em",
+        }}
+      >
+        <div style={iconStyle}>
+          <TypeScriptIcon width={iconWidth} />
+        </div>
+        <div style={iconStyle}>
+          <MySQLIcon width="5em" />
+        </div>
+        <div style={iconStyle}>
+          <ReactIcon width={iconWidth} />
+        </div>
+        <div style={iconStyle}>
+          <JavascriptIcon width={iconWidth} />
+        </div>
+        <div style={iconStyle}>
+          <ExpressJsIcon width={iconWidth} />
+        </div>
+        <div style={iconStyle}>
+          <MongoDBIcon width="10em" />
+        </div>
+        <div style={iconStyle}>
+          <NodeJSIcon width="10em" />
+        </div>
+        <div style={iconStyle}>
+          <PythonIcon width="6em" />
+        </div>
+        <div style={iconStyle}>
+          <CSharpIcon width="6em" />
+        </div>
+        <div style={iconStyle}>
+          <GitIcon width="10em" />
+        </div>
+        <div style={iconStyle}>
+          <DockerIcon width="10em" />
+        </div>
+        <div style={iconStyle}>
+          <JavaIcon height="5em" />
+        </div>
+        <div style={iconStyle}>
+          <MUIIcon height="7em" />
+        </div>
+        <div style={iconStyle}>
+          <MantineUIIcon height="7em" />
+        </div>
+      </Marquee>
+    </>
   );
 };
 
