@@ -24,8 +24,9 @@ const iconStyle = {
 const CustomMarquee: React.FC = () => {
   const matches = useMediaQuery((theme: Theme) => theme.breakpoints.down("sm"));
   const iconWidth = matches ? "3em" : "7em";
-  console.log("🚀 ~ iconWidth:", iconWidth);
-  const iconHeight = matches ? "3em" : "7em";
+  const smallIconWidth = matches ? "3em" : "5em";
+
+  const iconHeight = matches ? "3em" : "4em";
   return (
     <>
       <Typography
@@ -43,7 +44,7 @@ const CustomMarquee: React.FC = () => {
       </Typography>
       <Marquee
         gradient={false}
-        speed={50}
+        speed={60}
         style={{
           color: "#ffffff",
           fontSize: "1.2rem", // Adjusted font size for better visibility
@@ -54,6 +55,12 @@ const CustomMarquee: React.FC = () => {
           marginTop: "1em",
         }}
       >
+        <div style={iconStyle}>
+          <GitIcon
+            height={matches ? "2.1em" : "3.5em"}
+            width={matches ? "5em" : "7em"}
+          />
+        </div>
         <div style={iconStyle}>
           <TypeScriptIcon width={iconWidth} />
         </div>
@@ -70,31 +77,29 @@ const CustomMarquee: React.FC = () => {
           <ExpressJsIcon width={iconWidth} />
         </div>
         <div style={iconStyle}>
-          <MongoDBIcon width="10em" />
+          <MongoDBIcon width={"7em"} />
         </div>
         <div style={iconStyle}>
-          <NodeJSIcon width="10em" />
+          <NodeJSIcon width={iconWidth} />
         </div>
         <div style={iconStyle}>
-          <PythonIcon width="6em" />
+          <PythonIcon width={iconWidth} height={iconHeight} />
         </div>
         <div style={iconStyle}>
-          <CSharpIcon width="6em" />
+          <CSharpIcon width={iconWidth} />
+        </div>
+
+        <div style={iconStyle}>
+          <DockerIcon height={iconHeight} width={smallIconWidth} />
         </div>
         <div style={iconStyle}>
-          <GitIcon width="10em" />
+          <JavaIcon height={iconHeight} width={smallIconWidth} />
         </div>
         <div style={iconStyle}>
-          <DockerIcon width="10em" />
+          <MUIIcon height={iconHeight} width={smallIconWidth} />
         </div>
         <div style={iconStyle}>
-          <JavaIcon height="5em" />
-        </div>
-        <div style={iconStyle}>
-          <MUIIcon height="7em" />
-        </div>
-        <div style={iconStyle}>
-          <MantineUIIcon height="7em" />
+          <MantineUIIcon height={iconHeight} width={smallIconWidth} />
         </div>
       </Marquee>
     </>

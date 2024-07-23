@@ -32,3 +32,4 @@ export default {
 
 
 - [@React FAST Marquee](https://www.react-fast-marquee.com/) 
+- [@animate.style](https://animate.style/) 

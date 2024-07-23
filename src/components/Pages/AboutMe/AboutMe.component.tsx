@@ -2,6 +2,8 @@ import { Container, Box, Typography, Grid } from "@mui/material";
 import { IconCode, IconTools, IconSchool, IconUser } from "@tabler/icons-react";
 import { useStyles } from "./AboutMe.styles";
 import CustomMarquee from "./MyMarquee.component";
+import { useInView } from "react-intersection-observer";
+import "animate.css";
 
 const aboutData = [
   {
@@ -31,7 +33,7 @@ const aboutData = [
 ];
 
 const AboutMe = () => {
-  const { classes } = useStyles();
+  const { cx, classes } = useStyles();
 
   return (
     <>
@@ -52,24 +54,53 @@ const AboutMe = () => {
         </Container>
 
         <Grid container spacing={4} mt={4}>
-          {aboutData.map((item, index) => (
-            <Grid item xs={12} sm={6} key={index}>
-              <Box className={classes.item}>
-                <Box>{item.icon}</Box>
-                <Box ml={2}>
-                  <Typography variant="h6" className={classes.itemTitle}>
-                    {item.title}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    className={classes.itemDescription}
-                  >
-                    {item.description}
-                  </Typography>
+          {aboutData.map((item, index) => {
+            const { ref, inView } = useInView({
+              triggerOnce: true,
+              threshold: 0.1,
+            });
+
+            // Apply a delay based on the index of the item
+            const delay = index * 0.2; // 0.2s delay between items
+
+            return (
+              <Grid item xs={12} sm={6} key={index}>
+                <Box
+                  ref={ref}
+                  className={cx(
+                    classes.item,
+                    !inView && classes.placeholder,
+                    inView &&
+                      `${classes.item} animate__animated animate__fadeInUp`
+                  )}
+                  style={{
+                    animationDelay: inView ? `${delay}s` : undefined,
+                    opacity: inView ? 1 : 0,
+                    transform: inView ? "translateY(0)" : "translateY(100%)",
+                  }}
+                >
+                  {inView ? (
+                    <>
+                      <Box>{item.icon}</Box>
+                      <Box ml={2}>
+                        <Typography variant="h6" className={classes.itemTitle}>
+                          {item.title}
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          className={classes.itemDescription}
+                        >
+                          {item.description}
+                        </Typography>
+                      </Box>
+                    </>
+                  ) : (
+                    <div className={classes.placeholder} /> // Placeholder while out of view
+                  )}
                 </Box>
-              </Box>
-            </Grid>
-          ))}
+              </Grid>
+            );
+          })}
         </Grid>
       </Container>
       {/* Marquee Component */}

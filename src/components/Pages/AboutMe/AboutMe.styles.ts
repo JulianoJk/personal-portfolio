@@ -18,6 +18,31 @@ export const useStyles = makeStyles()(() => ({
     "&:hover": {
       backgroundColor: "#3b5a73",
     },
+    // Set initial animation state
+    opacity: 0,
+    transform: "translateY(100%)",
+  },
+  placeholder: {
+    width: "100%",
+
+    height: "150px", // Match the minHeight of the item
+
+    backgroundColor: "#324a5f",
+
+    borderRadius: "8px",
+  },
+  animateFromBelow: {
+    animation: "$fromBelow 1s ease-out forwards",
+  },
+  "@keyframes fromBelow": {
+    "0%": {
+      opacity: 0,
+      transform: "translateY(100%)",
+    },
+    "100%": {
+      opacity: 1,
+      transform: "translateY(0)",
+    },
   },
   itemIcon: {
     padding: "10px",
