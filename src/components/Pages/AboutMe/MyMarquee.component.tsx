@@ -19,7 +19,7 @@ const CustomMarquee: React.FC = () => {
   return (
     <Marquee
       gradient={false}
-      speed={50}
+      speed={70}
       style={{
         backgroundColor: "#1e2a38",
         color: "#ffffff",
@@ -27,11 +27,11 @@ const CustomMarquee: React.FC = () => {
         fontSize: "1rem",
         fontWeight: 500,
         textAlign: "center",
-        width: "100%", // Full container width
-        boxSizing: "border-box", // Include padding and border in the element's total width and height
+        width: "100%",
+        boxSizing: "border-box",
+        marginTop: "1em",
       }}
     >
-      {/* TODO!: Needs to check the width when mobile mode. Must be smaller */}
       <TypeScriptIcon width="7em" />
       <MySQLIcon width="10em" />
       <ReactIcon width="7em" />

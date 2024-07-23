@@ -2,6 +2,7 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  overflow-x: none;
 
   color-scheme: light dark;
   color: #f2f1f2;
@@ -23,7 +24,7 @@ a:hover {
 }
 
 body {
-  background: linear-gradient(to bottom, #1F2937, #2C3E50);
+  background: linear-gradient(to bottom, #1f2937, #2c3e50);
 }
 
 h1 {

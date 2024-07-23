@@ -2,10 +2,11 @@
 
 import React from "react";
 import { Box } from "@mui/material";
-import AboutMe from "./AboutMe/AboutMe.component";
+// import AboutMeOld from "./AboutMe/AboutMeOld.component";
 import ProjectsSection from "./ProjectsSection.component";
 import TestIDs from "../TestID";
 import LandPage from "./LandPage.component";
+import AboutMe from "./AboutMe/AboutMe.component";
 // import Skills from "./Skills.component";
 
 const Home: React.FC = () => {

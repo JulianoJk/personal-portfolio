@@ -547,6 +547,11 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@mantine/hooks@^7.11.2":
+  version "7.11.2"
+  resolved "https://registry.yarnpkg.com/@mantine/hooks/-/hooks-7.11.2.tgz#5629dff7ae7253f94e819c26b3b1adf97e68fd48"
+  integrity sha512-jhyVe/sbDEG2U8rr2lMecUPgQxcfr5hh9HazqGfkS7ZRIMDO7uJ947yAcTMGGkp5Lxtt5TBFt1Cb6tiB2/1agg==
+
 "@mui/base@5.0.0-beta.40":
   version "5.0.0-beta.40"
   resolved "https://registry.yarnpkg.com/@mui/base/-/base-5.0.0-beta.40.tgz#1f8a782f1fbf3f84a961e954c8176b187de3dae2"

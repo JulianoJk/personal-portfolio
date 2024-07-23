@@ -1,124 +1,71 @@
-import React from "react";
-import {
-  Box,
-  Container,
-  Card,
-  CardContent,
-  Typography,
-  Divider,
-} from "@mui/material";
-import { useStyles } from "./AboutMe.styles";
+import { Container, Box, Typography, Grid } from "@mui/material";
 import { IconCode, IconTools, IconSchool, IconUser } from "@tabler/icons-react";
-import CustomMarquee from "./MyMarquee.component";
+import { useStyles } from "./AboutMe.styles";
 
-const AboutMe: React.FC = () => {
+const aboutData = [
+  {
+    icon: <IconUser size={60} />,
+    title: "Personal Background",
+    description:
+      "I'm a 24-year-old junior front-end engineer specializing in React and TypeScript, with over two years of hands-on experience.",
+  },
+  {
+    icon: <IconCode size={60} />,
+    title: "Passion for Development",
+    description:
+      "Coding is not just my job; it's my passion. I thrive on learning new technologies and improving my craft every day.",
+  },
+  {
+    icon: <IconTools size={60} />,
+    title: "Collaboration & Innovation",
+    description:
+      "I love tackling challenges and collaborating with teams to build innovative solutions that make a difference.",
+  },
+  {
+    icon: <IconSchool size={60} />,
+    title: "Educational Background",
+    description:
+      "I hold a BSc in Computer Science from Empire State College SUNY, USA, and New York College in Greece.",
+  },
+];
+
+const AboutMe = () => {
   const { classes } = useStyles();
 
   return (
-    <Box className={classes.aboutMeRoot}>
-      <Container>
-        <Card
-          sx={{
-            textAlign: "center",
-            padding: "2em",
-            transition: "transform 0.3s, box-shadow 0.3s",
-            backgroundColor: "#1e2a38",
-            color: "#ffffff",
-            borderRadius: "15px",
-            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-            "&:hover": {
-              transform: "scale(1.05)",
-              boxShadow: "0 8px 16px rgba(0, 0, 0, 0.3)",
-            },
-          }}
-        >
-          <CardContent>
-            <Typography variant="h4" gutterBottom sx={{ fontWeight: 600 }}>
-              About Me
-            </Typography>
-            <Divider sx={{ margin: "1em 0", backgroundColor: "#ffffff" }} />
-            <Typography
-              variant="body1"
-              paragraph
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
-                lineHeight: { xs: 1.2, sm: 1.4, md: 1.6 },
-              }}
-            >
-              <IconUser
-                size={24}
-                color="#ffffff"
-                style={{ marginRight: "0.5em", flexShrink: 0 }}
-              />
-              I am a 24-year-old junior front-end engineer with over two years
-              of experience specializing in React and TypeScript.
-            </Typography>
-            <Typography
-              variant="body1"
-              paragraph
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
-                lineHeight: { xs: 1.2, sm: 1.4, md: 1.6 },
-              }}
-            >
-              <IconCode
-                size={24}
-                color="#ffffff"
-                style={{ marginRight: "0.5em", flexShrink: 0 }}
-              />
-              Web development and programming are my passions, fueling my drive
-              to continuously learn and enhance my skills.
-            </Typography>
-            <Typography
-              variant="body1"
-              paragraph
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
-                lineHeight: { xs: 1.2, sm: 1.4, md: 1.6 },
-              }}
-            >
-              <IconTools
-                size={24}
-                color="#ffffff"
-                style={{ marginRight: "0.5em", flexShrink: 0 }}
-              />
-              I thrive on challenges and enjoy collaborating with others to
-              create innovative solutions.
-            </Typography>
-            <Typography
-              variant="body1"
-              paragraph
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
-                lineHeight: { xs: 1.2, sm: 1.4, md: 1.6 },
-              }}
-            >
-              <IconSchool
-                size={24}
-                color="#ffffff"
-                style={{ marginRight: "0.5em", flexShrink: 0 }}
-              />
-              I hold a BSc in Computer Science from Empire State College SUNY,
-              USA, and New York College in Greece.
-            </Typography>
-          </CardContent>
-        </Card>
-        <CustomMarquee />
+    <Container maxWidth="md" className={classes.wrapper}>
+      <Typography className={classes.supTitle}>About Me</Typography>
+
+      <Typography variant="h4" className={classes.title} component="h2">
+        Discover <span className={classes.highlight}>My Journey</span>
+      </Typography>
+
+      <Container maxWidth="sm" disableGutters>
+        <Typography variant="body1" className={classes.description}>
+          Technology has always been my playground. From a young age, I've been
+          fascinated by how things work and how they can be improved. Here's a
+          glimpse into my world.
+        </Typography>
       </Container>
-    </Box>
+
+      <Grid container spacing={4} mt={4}>
+        {aboutData.map((item, index) => (
+          <Grid item xs={12} sm={6} key={index}>
+            <Box className={classes.item}>
+              <Box>{item.icon}</Box>
+              <Box ml={2}>
+                <Typography variant="h6" className={classes.itemTitle}>
+                  {item.title}
+                </Typography>
+                <Typography variant="body2" className={classes.itemDescription}>
+                  {item.description}
+                </Typography>
+              </Box>
+            </Box>
+          </Grid>
+        ))}
+      </Grid>
+    </Container>
   );
 };
-
 export default AboutMe;
