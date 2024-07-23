@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import ProjectCard from "./ProjectCard.component";
-import LogoImage from "../images/Logo";
+import LogoImage from "../images/illustrations/Logo";
 import Dutagmentutagment from "../images/dutagment.png";
 import SpotifyClone from "../images/SpotifyClone.png";
 const projectData = [

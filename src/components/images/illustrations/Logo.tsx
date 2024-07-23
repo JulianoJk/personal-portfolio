@@ -1,4 +1,4 @@
-import { ISvgImages } from "../Model/Model";
+import { ISvgImages } from "../../Model/Model";
 
 const LogoImage = (props: ISvgImages) => (
   <svg
