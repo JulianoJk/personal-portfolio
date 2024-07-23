@@ -34,6 +34,11 @@ const aboutData = [
 
 const AboutMe = () => {
   const { cx, classes } = useStyles();
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1, // Trigger when at least 10% of the item is visible
+    rootMargin: "0px 0px 0px 0px", // No extra margin; adjust if needed
+  });
 
   return (
     <>
@@ -55,13 +60,8 @@ const AboutMe = () => {
 
         <Grid container spacing={4} mt={4}>
           {aboutData.map((item, index) => {
-            const { ref, inView } = useInView({
-              triggerOnce: true,
-              threshold: 0.1,
-            });
-
             // Apply a delay based on the index of the item
-            const delay = index * 0.2; // 0.2s delay between items
+            const delay = index * 0.1; // 0.1s delay between items
 
             return (
               <Grid item xs={12} sm={6} key={index}>
@@ -103,7 +103,6 @@ const AboutMe = () => {
           })}
         </Grid>
       </Container>
-      {/* Marquee Component */}
       <CustomMarquee />
     </>
   );
