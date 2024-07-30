@@ -58,7 +58,7 @@ const AboutMe = () => {
           </Typography>
         </Container>
 
-        <Grid container spacing={4} mt={4}>
+        <Grid container spacing={4} mt={4} ref={ref}>
           {aboutData.map((item, index) => {
             // Apply a delay based on the index of the item
             const delay = index * 0.1; // 0.1s delay between items
@@ -66,7 +66,6 @@ const AboutMe = () => {
             return (
               <Grid item xs={12} sm={6} key={index}>
                 <Box
-                  ref={ref}
                   className={cx(
                     classes.item,
                     !inView && classes.placeholder,

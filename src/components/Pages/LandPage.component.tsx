@@ -18,7 +18,7 @@ const LandPage: React.FC = () => {
   const trailData = [
     {
       open: showTrail,
-      texts: ["Welcome to", "my page.", "I'm Juliano Jika"],
+      texts: ["Welcome to", "my portfolio!", "I'm Juliano Jika"],
     },
     {
       open: !showTrail,
