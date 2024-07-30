@@ -7,6 +7,7 @@ import ProjectsSection from "./ProjectsSection.component";
 import TestIDs from "../TestID";
 import LandPage from "./LandPage.component";
 import AboutMe from "./AboutMe/AboutMe.component";
+import FooterSocial from "./Footer/Footer.component";
 // import Skills from "./Skills.component";
 
 const Home: React.FC = () => {
@@ -27,6 +28,9 @@ const Home: React.FC = () => {
       {/* Projects Section */}
       <Box id={TestIDs.projects}>
         <ProjectsSection />
+      </Box>
+      <Box id={TestIDs.projects}>
+        <FooterSocial />
       </Box>
     </Box>
   );
