@@ -23,9 +23,23 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
   const { title, description, link, buttonText, imageUrl } = props;
   const { classes } = useStyles();
   return (
-    <Card sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
+    <Card
+      sx={{
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        backgroundColor: "#374957", // Card background color to match the body
+        color: "white", // Text color
+      }}
+    >
       {typeof imageUrl === "string" ? (
-        <CardMedia component="img" height="140" image={imageUrl} alt={title} draggable={false}/>
+        <CardMedia
+          component="img"
+          height="140"
+          image={imageUrl}
+          alt={title}
+          draggable={false}
+        />
       ) : (
         <Box
           sx={{
@@ -46,17 +60,17 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
         <Typography
           variant="body2"
           color="textSecondary"
-          sx={{ marginTop: "1em" }}
+          sx={{ marginTop: "1em", color: "white" }}
         >
           {description}
         </Typography>
       </CardContent>
       <CardActions>
         <Button
-          size="small"
+          size="medium"
           href={link}
           target="_blank"
-          rel="noopener noreferrer"
+          sx={{ color: "#95A1F9", "&:hover": { color: "#838ecd" } }}
         >
           {buttonText}
         </Button>
