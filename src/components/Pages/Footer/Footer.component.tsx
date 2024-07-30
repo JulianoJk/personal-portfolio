@@ -1,12 +1,7 @@
-import React from "react";
 import { Container, IconButton, Grid } from "@mui/material";
 import {
-  IconBrandTwitter,
-  IconBrandYoutube,
-  IconBrandInstagram,
   IconBrandGithub,
   IconBrandLinkedin,
-  IconPdf,
   IconFileCv,
 } from "@tabler/icons-react";
 import { useStyles } from "./Footer.styles";
