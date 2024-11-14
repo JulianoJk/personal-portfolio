@@ -28,7 +28,7 @@ const aboutData = [
     icon: <IconSchool size={60} />,
     title: "Educational Background",
     description:
-      "I hold a BSc in Computer Science from Empire State College SUNY, USA.",
+      "I hold a BSc in Computer Science from Empire State Univerity SUNY, USA.",
   },
 ];
 
