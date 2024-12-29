@@ -1,5 +1,3 @@
-// src/components/Header/DrawerAppBar.component.tsx
-
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -16,17 +14,15 @@ import Button from "@mui/material/Button";
 import { IconMenu2 } from "@tabler/icons-react";
 
 import TestIDs from "../TestID";
+import LanguagesMenu from "./ChangeLanguage/LanguagesMenu.component";
+import PlaygroundSpeedDial from "./ChangeLanguage/LanguageSelector";
+import { useAppState } from "../../context/AppContext";
 
 interface Props {
   window?: () => Window;
 }
 
 const drawerWidth = 240;
-const navItems = [
-  { name: "Home", path: TestIDs.home },
-  { name: "About", path: TestIDs.about },
-  { name: "Projects", path: TestIDs.projects },
-];
 
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
@@ -38,10 +34,16 @@ const scrollToSection = (id: string) => {
 const DrawerAppBar: React.FC<Props> = (props: Props) => {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const { lang } = useAppState();
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
+  const navItems = [
+    { name: lang === "EN" ? "Home" : "Startseite", path: TestIDs.home },
+    { name: lang === "EN" ? "About" : "Über", path: TestIDs.about },
+    { name: lang === "EN" ? "Projects" : "Projekte", path: TestIDs.projects },
+  ];
 
   const drawer = (
     <Box
@@ -90,7 +92,13 @@ const DrawerAppBar: React.FC<Props> = (props: Props) => {
           >
             Juliano Jika
           </Typography>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box
+            sx={{
+              display: { xs: "none", sm: "flex" },
+              gap: 2,
+              alignItems: "center",
+            }}
+          >
             {navItems.map((item) => (
               <Button
                 key={item.name}
@@ -100,6 +108,13 @@ const DrawerAppBar: React.FC<Props> = (props: Props) => {
                 {item.name}
               </Button>
             ))}
+          </Box>
+          {/* Language section will always appear here in both mobile and desktop view */}
+          <Box
+            sx={{ display: "flex", gap: 1, alignItems: "center", ml: "auto" }}
+          >
+            <LanguagesMenu />
+            <PlaygroundSpeedDial />
           </Box>
         </Toolbar>
       </AppBar>

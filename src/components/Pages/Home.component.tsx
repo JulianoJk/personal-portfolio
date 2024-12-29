@@ -21,10 +21,6 @@ const Home: React.FC = () => {
       <Box id={TestIDs.about}>
         <AboutMe />
       </Box>{" "}
-      {/* About Me Section */}
-      {/* <Box id={TestIDs.skills}>
-        <Skills />
-      </Box> */}
       {/* Projects Section */}
       <Box id={TestIDs.projects}>
         <ProjectsSection />

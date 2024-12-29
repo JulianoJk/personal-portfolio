@@ -4,32 +4,39 @@ import ProjectCard from "./ProjectCard.component";
 import LogoImage from "../images/illustrations/Logo";
 import Dutagmentutagment from "../images/dutagment.png";
 import SpotifyClone from "../images/SpotifyClone.png";
-
-const projectData = [
-  {
-    title: "Solo Learner",
-    description: "A free educational platform for learning foreign languages",
-    link: "https://github.com/JulianoJk/Solo-Learner",
-    buttonText: "View on GitHub",
-    imageUrl: <LogoImage height={"8em"} />,
-  },
-  {
-    title: "Dutagment",
-    description: "Simple TODO application",
-    link: "https://github.com/JulianoJk/Todo-application",
-    buttonText: "View on GitHub",
-    imageUrl: Dutagmentutagment,
-  },
-  {
-    title: "Spotify Clone",
-    description: "A simple Spotify clone",
-    link: "https://github.com/gprok-esc-courses/spotify_clone",
-    buttonText: "View on GitHub",
-    imageUrl: SpotifyClone,
-  },
-];
+import { useAppState } from "../../context/AppContext";
 
 const ProjectsSection: React.FC = () => {
+  const { lang } = useAppState();
+  const projectData = [
+    {
+      title: "Solo Learner",
+      description:
+        lang === "EN"
+          ? "A free educational platform for learning foreign languages"
+          : "Eine kostenlose Bildungsplattform zum Erlernen von Fremdsprachen",
+      link: "https://github.com/JulianoJk/Solo-Learner",
+      buttonText: lang === "EN" ? "View on GitHub" : "Auf GitHub ansehen",
+      imageUrl: <LogoImage height={"8em"} />,
+    },
+    {
+      title: "Dutagment",
+      description:
+        lang === "EN" ? "Simple TODO application" : "Einfache TODO-Anwendung",
+      link: "https://github.com/JulianoJk/Todo-application",
+      buttonText: lang === "EN" ? "View on GitHub" : "Auf GitHub ansehen",
+      imageUrl: Dutagmentutagment,
+    },
+    {
+      title: "Spotify Clone",
+      description:
+        lang === "EN" ? "A simple Spotify clone" : "Ein einfacher Spotify-Klon",
+      link: "https://github.com/gprok-esc-courses/spotify_clone",
+      buttonText: lang === "EN" ? "View on GitHub" : "Auf GitHub ansehen",
+      imageUrl: SpotifyClone,
+    },
+  ];
+
   return (
     <Box
       sx={{
@@ -56,7 +63,7 @@ const ProjectsSection: React.FC = () => {
             marginBottom: "1em",
           }}
         >
-          Projects
+          {lang === "EN" ? "Projects" : "Projekte"}
         </Typography>
         <Grid container spacing={4} justifyContent="center">
           {projectData.map((project, index) => (

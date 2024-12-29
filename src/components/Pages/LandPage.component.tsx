@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Paper } from "@mui/material";
 import { useStyles } from "./Home.styles";
 import Trail from "./Trail.component";
+import { useAppState } from "../../context/AppContext";
 
 const LandPage: React.FC = () => {
   const { classes } = useStyles();
   const [showTrail, setShowTrail] = useState(true);
-
+  const { lang } = useAppState();
   useEffect(() => {
     const interval = setInterval(() => {
       setShowTrail((prevOpen) => !prevOpen);
@@ -18,11 +19,17 @@ const LandPage: React.FC = () => {
   const trailData = [
     {
       open: showTrail,
-      texts: ["Welcome to", "my portfolio!", "I'm Juliano Jika"],
+      texts:
+        lang === "EN"
+          ? ["Welcome to", "my portfolio!", "I'm Juliano Jika"]
+          : ["Willkommen bei", "meinem Portfolio!", "Ich bin Juliano Jika"],
     },
     {
       open: !showTrail,
-      texts: ["Full Stack Developer", "Code Explorer", "Tech Enthusiast"],
+      texts:
+        lang === "EN"
+          ? ["Full Stack Developer", "Code Explorer", "Tech Enthusiast"]
+          : ["Full Stack Entwickler", "Code-Explorer", "Tech-Enthusiast"],
     },
   ];
 

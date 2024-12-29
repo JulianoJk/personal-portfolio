@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./components/Header/Header.component";
 import Home from "./components/Pages/Home.component";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { AppContextProvider } from "./context/AppContext";
 
 export interface ColorMap {
   [colorName: string]: string;
@@ -83,25 +84,29 @@ const ThemePalette: Palette = {
     Dark: "#976D19",
   },
 };
+
 const theme = createTheme({
   palette: ThemePalette,
 });
+
 const App: React.FC = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          minHeight: "100vh",
-        }}
-      >
-        <Header />
-        <div style={{ maxWidth: "100%", overflowX: "hidden" }}>
-          <Home />
+    <AppContextProvider>
+      <ThemeProvider theme={theme}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            minHeight: "100vh",
+          }}
+        >
+          <Header />
+          <div style={{ maxWidth: "100%", overflowX: "hidden" }}>
+            <Home />
+          </div>
         </div>
-      </div>
-    </ThemeProvider>
+      </ThemeProvider>
+    </AppContextProvider>
   );
 };
 

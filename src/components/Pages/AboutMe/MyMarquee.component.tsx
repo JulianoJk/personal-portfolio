@@ -15,6 +15,7 @@ import DockerIcon from "../../images/illustrations/DockerIcon";
 import MUIIcon from "../../images/illustrations/MUIIcon";
 import MantineUIIcon from "../../images/illustrations/MantineUIIcon";
 import { Theme, Typography, useMediaQuery } from "@mui/material";
+import { useAppState } from "../../../context/AppContext";
 
 const iconStyle = {
   display: "inline-block",
@@ -25,6 +26,7 @@ const CustomMarquee: React.FC = () => {
   const matches = useMediaQuery((theme: Theme) => theme.breakpoints.down("sm"));
   const iconWidth = matches ? "3em" : "8em";
   const smallIconWidth = matches ? "3em" : "5em";
+  const { lang } = useAppState();
 
   const iconHeight = matches ? "3em" : "4em";
   return (
@@ -40,7 +42,7 @@ const CustomMarquee: React.FC = () => {
           marginBottom: "1em",
         }}
       >
-        Programming Skills
+        {lang === 'EN' ? "Programming Skills" : "Programmierfähigkeiten"} 
       </Typography>
       <Marquee
         gradient={false}
