@@ -43,7 +43,7 @@ const FooterSocial = () => {
         </Grid>
         <Grid item>
           <a
-            href="https://drive.google.com/file/d/1aRZttjHUsA7jrmsNUOfteVPcYCZTIzfZ/view?usp=sharing"
+            href="https://drive.google.com/file/d/1BrRIKWXzYJJDKb6Bh_oSNxeo_z7kZr9a/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="CV"
